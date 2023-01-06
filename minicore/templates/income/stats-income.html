@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-10">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="">Resumen de ganancias</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Ganancias</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="col-md-2">
+      <a href="" class="btn btn-primary"
+        >Atras</a
+      >
+    </div>
+  </div>
+
+  <canvas id="myChart2" width="400" height="400"></canvas>
+
+</div>
+</div>
+<script src="{% static 'js/stats-income.js' %}">
+
+</script>
+
+{% endblock %}

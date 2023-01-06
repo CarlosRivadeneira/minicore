@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'GastApp' %}">Ganancias</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Ingresar una ganancia</li>
+        </ol>
+    </nav>
+
+    
+    <div class="card">
+            <div class="card-body">
+                <form action="{% url 'add-income' %}" method="POST">
+                {% csrf_token %}
+                {% include 'partials/_messages.html' %}
+                <div class="form-group">
+                    <label for="">Cantidad</label>
+                    <input type="number" class="form-control form-control-sm" name="amount" value="{{values.amount}}">
+                </div>
+                <div class="form-group">
+                    <label for="">Descripcion</label>
+                    <input type="text" class="form-control form-control-sm" name="description" value="{{values.description}}">
+                </div>
+                <div class="form-group">
+                    <label for="">Fuente</label>
+                    <select class="form-control" name="source">
+                        {% for source in sources %}
+                        <option name="source" value="{{source.name}}">{{source.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Fecha de ganancia</label>
+                    <input type="date" class="form-control form-control-sm" name="income-date">
+                </div>
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary btn-primary-sm">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,31 +13,14 @@
     <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" />
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <main class="col-md-12">
-            <div class="col-md-3">
+        <main role="main">
+          {% block content %} 
 
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    {% block content %} 
-
-                    {% endblock %}
-                </div>
-            </div>
-            <div class="col-md-3">
-
-            </div>
+          {% endblock %}
         </main>
       </div>
     </div>
 
-    <script
-      src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
       integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
